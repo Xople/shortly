@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { illustration, iconBrandRecognition, iconFullyCustomizeable, iconDetailedRecords } from './assets/images/index';
 import { Header, Footer } from './components/layout/index';
-import './assets/scss/main.scss';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import './assets/scss/main.scss';
 
 function App() {
   const [link, setLink] = useState('')
@@ -24,6 +25,12 @@ function App() {
   }
   return (
     <React.Fragment>
+
+      <Helmet>
+        <title>Shortly</title>
+        <meta name="name-app" content="short-link" />
+      </Helmet>
+
       <Header />
       <div className="hero">
         <div className="container d-flex align-items-center justify-content-between">
